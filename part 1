@@ -1,0 +1,70 @@
+PART 1: Short Answer Questions 
+1. Problem Definition 
+Hypothetical AI Problem: Predicting student dropout rates in online universities
+
+Objectives:
+
+Identify at-risk students early.
+
+Improve retention through timely interventions.
+
+Allocate support resources more efficiently.
+
+Stakeholders:
+
+Academic Advisors
+
+University Administration
+
+KPI: Dropout prediction accuracy 
+
+2. Data Collection & Preprocessing 
+Data Sources:
+
+LMS logs (e.g., Moodle, Blackboard)
+
+Student demographic and performance records
+
+Potential Bias:
+
+Underrepresentation of low-income or disabled students.
+
+Preprocessing Steps:
+
+Handle missing values (e.g., attendance logs)
+
+Normalize numerical features (e.g., GPA, login time)
+
+Encode categorical variables (e.g., study major)
+
+3. Model Development (8 pts)
+Model: Random Forest
+
+Justification: Handles both numerical/categorical data well, robust to noise.
+
+Data Split:
+
+70% Training, 15% Validation, 15% Test
+
+Hyperparameters:
+
+n_estimators: Number of trees (affects accuracy and training time)
+
+max_depth: Controls overfitting
+
+4. Evaluation & Deployment 
+Metrics:
+
+F1-Score: Balances precision & recall for imbalanced dropout data.
+
+ROC-AUC: Measures ability to distinguish dropout vs. retained.
+
+Concept Drift:
+
+Definition: Model performance degrades as data patterns change.
+
+Monitoring: Retrain monthly, track accuracy over time.
+
+Deployment Challenge:
+
+Scalability: Handling large datasets from multiple campuses.
