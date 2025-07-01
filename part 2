@@ -1,0 +1,53 @@
+PART 2: Case Study – Hospital Readmission 
+1. Problem Scope 
+Problem: Predict patients likely to be readmitted within 30 days.
+
+Objectives: Reduce readmissions, save costs, improve care.
+
+Stakeholders: Doctors, IT department, Patients.
+
+2. Data Strategy 
+Data Sources:
+
+Electronic Health Records (EHR)
+
+Socioeconomic demographics
+
+Ethical Concerns:
+
+Patient privacy (data anonymization)
+
+Data ownership and consent
+
+Preprocessing Pipeline:
+
+Remove duplicates/missing records
+
+Feature engineering (e.g., time since last visit, comorbidities)
+
+One-hot encoding for diagnosis types
+
+3. Model Development
+Model: Logistic Regression (easy to interpret in healthcare)
+
+Confusion Matrix 
+|            | Predicted Yes | Predicted No |
+| ---------- | ------------- | ------------ |
+| Actual Yes | 40            | 10           |
+| Actual No  | 20            | 130          |
+
+
+4. Deployment 
+Steps:
+
+Deploy via hospital cloud or EMR system.
+
+Integrate prediction into doctor dashboard.
+
+Compliance:
+
+Follow HIPAA: encryption, access control, audit logs.
+
+Optimization:
+
+Use dropout regularization to reduce overfitting.
