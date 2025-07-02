@@ -1,0 +1,44 @@
+Part 3: Critical Thinking
+
+Ethics & Bias (10 points)
+
+ * How might biased training data affect patient outcomes in the case study?
+   Imagine our AI model learns from old patient records. If, historically, certain groups of patients (let's say, people from a particular low-income neighborhood, or a specific racial group) received less follow-up care after discharge, or had fewer resources available to them (like reliable transport to appointments), then the data might show they had higher readmission rates.
+   The AI model, without understanding why these differences exist, might simply learn to associate being from that neighborhood or belonging to that group with a higher "risk" of readmission.
+   Here's how this bias could hurt patients:
+   * Wrongful Denial of Support: The model might label a patient from a disadvantaged group as "high risk" just because of their background, even if their individual medical needs are actually low. This could lead to them getting unnecessary extra interventions, wasting hospital resources and potentially making the patient feel over-scrutinized.
+   * Missing Real Risks: Conversely, the model might underestimate the risk for a patient from a seemingly "low-risk" group, even if that individual actually has complex medical needs. This could mean they don't get the extra support they desperately need, leading to an avoidable readmission.
+   * Worsening Health Gaps: If the AI consistently over-predicts risk for some groups and under-predicts for others, it could unintentionally make existing health inequalities even worse. It might direct resources away from where they are truly needed, based on a flawed understanding of risk.
+   * Erosion of Trust: Patients might lose trust in the healthcare system if they feel they are being treated differently or unfairly because of an AI's biased prediction.
+ * Suggest 1 strategy to mitigate this bias.
+   Strategy: Fair Representation in Data & Targeted Re-weighting.
+   To fix this, we need to make sure our training data truly represents everyone fairly, and not just what happened in the past.
+   * Active Data Collection & Augmentation: First, actively look for gaps in the data. If we notice we have very little data for a certain demographic group, or if that group's outcomes seem skewed in the existing data, we might need to actively collect more balanced data. If direct collection isn't possible, we could use data augmentation techniques (like creating synthetic, but realistic, data points) to balance out underrepresented groups.
+   * Targeted Re-weighting: When training the model, we can give more "importance" (or weight) to the data points from underrepresented groups or to specific types of errors. For example, if the model frequently makes "false negatives" (misses actual readmissions) for a particular group, we can tell the model to "pay more attention" to those specific errors during training. This encourages the model to learn better from those examples and be more accurate across all groups, rather than just optimizing for the majority. We can also assign different "costs" to different types of errors – for instance, making it more costly for the model to miss a true readmission for a vulnerable patient group.
+   This helps the AI learn that preventing readmission for every patient is equally important, regardless of their background, pushing it towards fairer predictions.
+
+2.  Trade-offs (10 points
+
+ * Discuss the trade-off between model interpretability and accuracy in healthcare:
+   * Accuracy: How often the model is right in its predictions. A highly accurate model is very good at guessing who will be readmitted.
+   * Interpretability: How easily a human can understand why the model made a certain prediction. Can a doctor look at the model's output and see, "Ah, this patient is high-risk because of their heart condition, their age, and the number of medications they're taking"?
+   The Trade-off:
+   Often, the most accurate AI models (like the Gradient Boosting Machine we chose earlier) are like "black boxes." They're super good at making predictions, but they do it in such a complex way that it's really hard for a human to follow the exact steps or logic behind their decision. It's like they just spit out an answer without showing their work.
+   Simpler models (like a basic decision tree or a linear regression) are much easier to understand. You can almost draw out the rules they follow. But these simpler models might not be as accurate because they can't capture all the tiny, complicated relationships in the data.
+   In Healthcare, this trade-off is crucial:
+   * Why Accuracy is Good: For predicting readmission, high accuracy means more correct identifications of high-risk patients, potentially saving lives and reducing hospital costs. You want the best possible prediction.
+   * Why Interpretability is Good:
+     * Trust: Doctors and nurses need to trust the AI. If they don't understand why it's saying someone is high-risk, they might not use it, or they might override its recommendations, which defeats the purpose.
+     * Actionable Insights: Knowing why a patient is high-risk (e.g., "They're elderly, live alone, and have complex diabetes") allows clinicians to take specific, targeted actions, rather than just knowing "they're high risk."
+     * Legal & Ethical Accountability: If something goes wrong, it's important to be able to explain the model's decision-making process.
+     * Model Improvement: Understanding why a model makes mistakes helps data scientists improve it.
+   So, we often face a choice: do we go for the super-accurate "black box" that's hard to explain, or a slightly less accurate but very transparent model? In healthcare, a balance is often best. We might choose a high-accuracy model but then use special tools (like SHAP values we talked about earlier) to try and peek inside the "black box" and explain its decisions after it's made them.
+ * If the hospital has limited computational resources, how might this impact model choice?
+   "Limited computational resources" means the hospital might not have super powerful computers, lots of memory, or fast processing power readily available. This changes how we pick our AI model:
+   * Simpler Models Preferred: We'd lean towards simpler, "lighter" models that don't need a lot of processing power or memory to train or to make predictions.
+     * Examples: Instead of a complex deep learning model or a large ensemble of Gradient Boosting trees, we might consider a Logistic Regression, a Support Vector Machine (SVM) with a linear kernel, or a simple Decision Tree. These models are less computationally intensive.
+   * Faster Inference Time: When a patient is being discharged, the doctor needs a risk score quickly. Complex models can take longer to give an answer. Simpler models can provide predictions almost instantly, which is crucial in a fast-paced hospital environment.
+   * Less Data Preprocessing: Some complex models require a lot of fancy data preparation and feature engineering. If computational resources are limited, simpler models often tolerate less intensive preprocessing, which also saves time and processing power.
+   * No Huge Neural Networks: Deep learning models (like neural networks) are very powerful but demand enormous computational resources (especially powerful graphics cards, or GPUs) for training. These would likely be out of the question with limited resources.
+   * Batch Processing Over Real-time (potentially): If real-time predictions are too demanding, the hospital might have to settle for "batch processing," where risk scores are calculated for a group of patients overnight or at scheduled intervals, rather than instantly as each patient's data becomes available. This is a trade-off in utility, driven by resource constraints.
+   In short, limited resources push us towards models that are efficient, fast, and don't need a supercomputer to run.
