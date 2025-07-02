@@ -88,6 +88,15 @@ Steps:
 - Schedule monthly model retraining for concept drift handling.
 
 ---
+## Critical Thinking
+
+### Key Ethical & Bias Learnings:
+-   **Biased training data** (e.g., from historical care disparities) can lead to the model falsely labeling certain demographic groups as "high risk" or missing actual risks in others, worsening health inequities and eroding trust.
+-   **Mitigation Strategy**: Implement **fair representation in data** through active collection, augmentation, and **targeted re-weighting** during training to ensure the model learns to prevent readmission equally for all patients.
+
+### Trade-offs (Interpretability vs. Accuracy & Resource Constraints):
+-   **Interpretability vs. Accuracy**: Highly accurate "black box" models are hard for clinicians to trust and act upon. While simpler models are more interpretable, they may be less accurate. In healthcare, a **balance is crucial**, often achieved by using interpretable models or applying **Explainable AI (XAI)** techniques to complex models. Knowing *why* a patient is high-risk allows for targeted interventions.
+-   **Impact of Limited Computational Resources**: Constraints necessitate choosing **simpler, "lighter" models** (like Logistic Regression) that are computationally efficient, require less complex preprocessing, and offer faster prediction times, crucial for real-time hospital environments
 
 ## Ethical Considerations
 
@@ -102,20 +111,24 @@ Steps:
 
 ---
 
+## Reflection & Future Improvements
+
+### Most Challenging Aspect:
+-   The **Data Strategy** phase, especially **ethical concerns related to bias** and ensuring **data quality and integration**. Healthcare data is fragmented, often messy, and privacy-sensitive (HIPAA), making it hard to get clean, unbiased, real-time data for model training.
+
+### Future Improvements with More Resources:
+-   **Causal Inference & Advanced XAI**: Move beyond correlation to understand *why* risks exist, and provide interactive, explainable AI insights to clinicians.
+-   **Richer & Diverse Data**: Integrate **Social Determinants of Health (SDOH)** and leverage **unstructured clinical notes** with advanced NLP for a more holistic patient view.
+-   **Advanced Monitoring & Feedback Loops**: Implement automated MLOps pipelines for continuous learning, A/B testing of interventions, and direct clinician feedback to continuously refine the model.
+-   **Dedicated Ethics & Oversight Committee**: Establish a multi-disciplinary committee to ensure ongoing ethical deployment and governance..
+-   
+---
+
 ## Workflow Diagram
 
 ![AI Development Workflow Diagram](diagram.png)
 
 > This diagram illustrates the AI workflow: from problem definition to model monitoring.
-
----
-
-## Reflection
-
-- Biggest Challenge: Ensuring fairness while maintaining model performance.
-- Future Improvements:
-  - Gather more diverse, real-world hospital data.
-  - Deploy multiple models and choose dynamically based on patient profiles.
 
 ---
 
