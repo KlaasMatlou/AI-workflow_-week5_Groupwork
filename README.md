@@ -126,7 +126,7 @@ Steps:
 
 ## Workflow Diagram
 
-![AI Development Workflow Diagram](C:\Users\Tshupsane\Desktop\GitHub\AI software Engineering\AI-SE-week4-AI_IN_SE\AI-workflow_-week5_Groupwork\AIflowchar.drawio)
+![AI Development Workflow Diagram](AI-FLOWCHART.png)
 
 > This diagram illustrates the AI workflow: from problem definition to model monitoring.
 
