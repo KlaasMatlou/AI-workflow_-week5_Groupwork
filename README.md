@@ -126,7 +126,7 @@ Steps:
 
 ## Workflow Diagram
 
-![AI Development Workflow Diagram](diagram.png)
+![AI Development Workflow Diagram](AIflowchar.drawio)
 
 > This diagram illustrates the AI workflow: from problem definition to model monitoring.
 

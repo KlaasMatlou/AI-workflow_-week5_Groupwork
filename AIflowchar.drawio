@@ -1,0 +1,76 @@
+<mxfile host="65bd71144e">
+    <diagram id="AI_Development_Workflow" name="AI Development Workflow">
+        <mxGraphModel dx="662" dy="513" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="#2BFF95" math="0" shadow="1">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="start" value="Start" style="ellipse;whiteSpace=wrap;fillColor=#008a00;strokeColor=#005700;fontColor=#ffffff;" parent="1" vertex="1">
+                    <mxGeometry x="300" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="data_collection" value="Data Collection" style="rounded=1;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+                    <mxGeometry x="500" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="preprocessing" value="Data Preprocessing" style="rounded=1;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;glass=0;" parent="1" vertex="1">
+                    <mxGeometry x="500" y="80" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="model_selection" value="Model Selection" style="rounded=1;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;glass=0;" parent="1" vertex="1">
+                    <mxGeometry x="220" y="80" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="training" value="Model Training" style="rounded=1;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+                    <mxGeometry x="220" y="180" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="evaluation" value="Model Evaluation" style="rounded=1;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+                    <mxGeometry x="400" y="180" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="decision" value="Performance&#xa;Satisfactory?" style="rhombus;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+                    <mxGeometry x="400" y="280" width="120" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="deployment" value="Deployment" style="rounded=1;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+                    <mxGeometry x="610" y="300" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="monitoring" value="Monitoring &amp; Maintenance" style="rounded=1;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+                    <mxGeometry x="610" y="420" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="end" value="End" style="ellipse;whiteSpace=wrap;fillColor=#008a00;strokeColor=#005700;fontColor=#ffffff;" parent="1" vertex="1">
+                    <mxGeometry x="400" y="420" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="conn1" value="" style="edgeStyle=orthogonalEdgeStyle;" parent="1" source="start" target="data_collection" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="conn2" value="" style="edgeStyle=orthogonalEdgeStyle;" parent="1" source="data_collection" target="preprocessing" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="conn3" value="" style="edgeStyle=orthogonalEdgeStyle;" parent="1" source="preprocessing" target="model_selection" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="conn4" value="" style="edgeStyle=orthogonalEdgeStyle;" parent="1" source="model_selection" target="training" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="conn5" value="" style="edgeStyle=orthogonalEdgeStyle;" parent="1" source="training" target="evaluation" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="conn6" value="" style="edgeStyle=orthogonalEdgeStyle;" parent="1" source="evaluation" target="decision" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="conn7" value="Yes" style="edgeStyle=orthogonalEdgeStyle;fontStyle=1;shadow=1;" parent="1" source="decision" target="deployment" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="conn8" value="No" style="edgeStyle=orthogonalEdgeStyle;exitX=0;exitY=0.5;exitDx=0;exitDy=0;fontStyle=1" parent="1" source="decision" target="model_selection" edge="1">
+                    <mxGeometry x="0.3429" relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="200" y="330"/>
+                            <mxPoint x="200" y="110"/>
+                        </Array>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="conn9" value="" style="edgeStyle=orthogonalEdgeStyle;" parent="1" source="deployment" target="monitoring" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="conn10" value="" style="edgeStyle=orthogonalEdgeStyle;" parent="1" source="monitoring" target="end" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
